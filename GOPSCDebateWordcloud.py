@@ -25,3 +25,27 @@ for line in soundbytes:
     if line[0] != '(COMMERCIAL BREAK)' and line[0] != '(BELL RINGING)' and line[0] != '(APPLAUSE)':
         talkingpoints.append(line)
 
+
+candidates = set(candidates)
+speakers = candidates
+speakers = list(speakers)
+
+bush = []
+carson = []
+cruz = []
+kasich = []
+rubio = []
+trump = []
+for line in talkingpoints:
+    if line[0]=='BUSH':
+        bush.append(line[1:])
+    elif line[0]=='CARSON':
+        carson.append(line[1:])
+    elif line[0]=='CRUZ':
+        cruz.append(line[1:])
+    elif line[0]=='KASICH':
+        kasich.append(line[1:])
+    elif line[0]=='RUBIO':
+        rubio.append(line[1:])
+    elif line[0]=='TRUMP':
+        trump.append(line[1:])
