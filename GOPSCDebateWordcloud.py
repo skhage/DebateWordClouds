@@ -16,6 +16,12 @@ print(bsObj.text)
 
 # In[20]:
 
-text = bsObj.find(text=True,'p')
-print(text)
+soundbytes = bsObj.findAll("p",{"class":""})[4:]
+
+talkingpoints = []
+for line in soundbytes:
+    line = line.text
+    line = line.split(":")
+    if line[0] != '(COMMERCIAL BREAK)' and line[0] != '(BELL RINGING)' and line[0] != '(APPLAUSE)':
+        talkingpoints.append(line)
 
